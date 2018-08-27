@@ -57,6 +57,16 @@ AssetsWebpackPlugin.prototype = {
         if (!Array.isArray(assets)) {
           assets = [assets];
         }
+        // 针对魔方做一些特殊处理
+        if (chunkName.match(/\//)) {
+          var tempname = chunkName.split('/').pop();
+          if (chunkMap[tempname]) {
+              console.log('组件和其他产品线重名了', chunkName);
+              process.exit(-1);
+          } else {
+              chunkName = tempname;
+          }
+        }
         chunkMap[chunkName] = assets.reduce(function (typeMap, asset) {
           if (isHMRUpdate(options, asset) || isSourceMap(options, asset)) {
             return typeMap;

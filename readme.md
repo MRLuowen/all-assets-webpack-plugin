@@ -1,6 +1,8 @@
 all-assets-webpack-plugin
 =====================
 
+更新：
+    1.针对区分产品线，为了兼容之前的活动页面,对导出的key做了修改。
 说明： 其实就是在assets-webpack-plugin基础上新增了对ttf字体文件,mp3文件的抽取。
 
 [ ![Codeship Status for sporto/assets-webpack-plugin](https://codeship.com/projects/c9171f30-f64d-0132-8e3e-02d99c35d383/status?branch=master)](https://codeship.com/projects/85994)
